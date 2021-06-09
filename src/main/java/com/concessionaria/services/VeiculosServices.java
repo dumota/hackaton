@@ -15,6 +15,7 @@ public class VeiculosServices {
 	private VeiculoRepository repo;
 	
 	public List<Veiculo> listAll(){
-		return repo.findAll();
+		return repo.encontar(6);
 	}
+
 }

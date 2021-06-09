@@ -1,6 +1,6 @@
 package com.concessionaria.models;
 
-import java.time.LocalDate;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,7 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-import org.springframework.format.annotation.DateTimeFormat;
+
 
 @Entity
 public class Veiculo {
@@ -22,11 +22,11 @@ public class Veiculo {
 	private Long id;
 	private String modelo;
 	
-	@DateTimeFormat(pattern = "yyyy-%-%")
-	private LocalDate anomodelo;
 	
-	@DateTimeFormat(pattern = "yyyy")
-	private LocalDate anofabricacao;
+	private Integer anomodelo;
+	
+	
+	private Integer anofabricacao;
 	
 	private Double valor;
 	
@@ -58,14 +58,15 @@ public class Veiculo {
 		return modelo;
 	}
 
-	public LocalDate getAnomodelo() {
+	public Integer getAnomodelo() {
 		return anomodelo;
 	}
-
-	public LocalDate getAnofabricacao() {
+	public Integer getAnofabricacao() {
 		return anofabricacao;
 	}
-
+	public String getFotodestaque() {
+		return fotodestaque;
+	}
 	public Double getValor() {
 		return valor;
 	}
