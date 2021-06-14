@@ -65,18 +65,18 @@ public class IndexController {
 
 		return "main/detalhes";
 	}
-	@RequestMapping("/cv")
+	@RequestMapping("/cores")
 	public String porcor(@PathParam(value="id")Long id, Model model) {
-		model.addAttribute("cv", repo.porCor(id));
+		model.addAttribute("listVeiculos", repo.porCor(id));
 		model.addAttribute("listCor", corRepo.findAll());
 		model.addAttribute("listMarca", marcaRepo.findAll());
 		
 		return "main/veiculoCor";
 	}
 	
-	@RequestMapping("/mv")
+	@RequestMapping("/marcas")
 	public String pormarca(@PathParam(value="id")Long id, Model model) {
-		model.addAttribute("mv", repo.porMarca(id));
+		model.addAttribute("listVeiculos", repo.porMarca(id));
 		model.addAttribute("listCor", corRepo.findAll());
 		model.addAttribute("listMarca", marcaRepo.findAll());
 		

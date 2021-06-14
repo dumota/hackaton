@@ -47,7 +47,7 @@
 				role="button" aria-expanded="false">Cor</a>
 				<ul class="dropdown-menu">
 					<li th:each=" c : ${listCor}">
-					   <a th:href="@{/cv/(id=${c.id})}" class="dropdown-item"><p th:text="${c.cor}"></p></a>
+					   <a th:href="@{/cores/(id=${c.id})}" class="dropdown-item"><p th:text="${c.cor}"></p></a>
 					</li>
 
 				</ul></li>
@@ -56,7 +56,7 @@
 				role="button" aria-expanded="false">Marca</a>
 				<ul class="dropdown-menu">
 					<li th:each=" m : ${listMarca}">
-					   <a th:href="@{/mv/(id=${m.id})}" class="dropdown-item"><p th:text="${m.marca}"></p></a>
+					   <a th:href="@{/marcas/(id=${m.id})}" class="dropdown-item"><p th:text="${m.marca}"></p></a>
 					</li>
 
 				</ul></li>	
@@ -83,40 +83,6 @@
 	</div>
 </div>
 
-
-<!-- Component Card de apresentação de veiculos por cor-->
-
-<div th:fragment="cor" class="card col-12 col-md-4 text container" id="card" th:each="v : ${cv}">
-	<img class="card-img-top w-100" th:attr="src=@{/images/}+${v.fotodestaque}+m.jpg, alt=${v.modelo}, title=${v.modelo}">
-	<div class="card-body">
-	    
-		<h4 class="card-title" th:text="${v.modelo}"></h4>
-		<h3 class="card-text" th:text="${#numbers.formatCurrency(v.valor)}"></h3>
-		<p class="card-title" th:text="${v.marca.marca}"></p>
-		<div class="clearfix">
-			<p class="card-text float-start text-muted" th:text="${v.anofabricacao}"></p>
-			<p class="card-text float-end text-muted" th:text="${v.tipo}"></p>
-		</div>
-		<a th:href="@{/obj/(id=${v.id})}" class="btn btn-success btn-lg w-100">Detalhes</a>
-	</div>
-</div>
-
-
-<!-- Component Card de apresentação de veiculos por Marca-->
-
-<div th:fragment="marca" class="card col-12 col-md-4 text container" id="card" th:each="v : ${mv}">
-	<img class="card-img-top w-100" th:attr="src=@{/images/}+${v.fotodestaque}+m.jpg, alt=${v.modelo}, title=${v.modelo}">
-	<div class="card-body">
-		<h4 class="card-title" th:text="${v.modelo}"></h4>
-		<h3 class="card-text" th:text="${#numbers.formatCurrency(v.valor)}"></h3>
-		<p class="card-title" th:text="${v.marca.marca}"></p>
-		<div class="clearfix">
-			<p class="card-text float-start text-muted" th:text="${v.anofabricacao}"></p>
-			<p class="card-text float-end text-muted" th:text="${v.tipo}"></p>
-		</div>
-		<a th:href="@{/obj/(id=${v.id})}" class="btn btn-success btn-lg w-100">Detalhes</a>
-	</div>
-</div>
 
 
 <!-- Component footer -->
